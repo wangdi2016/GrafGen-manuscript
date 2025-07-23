@@ -16,6 +16,10 @@ https://github.com/gtonkinhill/fastbaps
 ## PopPUNK
 ```
 https://github.com/bacpop/PopPUNK
+
+# Download PopPUNK database
+
+https://www.bacpop.org/poppunk/
 ```
 
 ## fineSTRUCTURE
