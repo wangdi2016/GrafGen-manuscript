@@ -18,3 +18,8 @@ https://github.com/gtonkinhill/fastbaps
 https://github.com/bacpop/PopPUNK
 ```
 
+## fineSTRUCTURE
+```
+https://github.com/danjlawson/finestructure4
+```
+
