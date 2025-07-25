@@ -1,5 +1,6 @@
 # GrafGen-benchmark
-Benchmarking GrafGen, fastBAPS, popPUNK
+
+## Benchmarking GrafGen, fastBAPS, popPUNK, and fineSTRUCTURE
 
 This git repo is used for the benchmark GrafGen, fastaBAPS, popPUNK and fineSTRUCTURE in GrafGen manuscript.
 
