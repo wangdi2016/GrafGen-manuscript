@@ -5,17 +5,17 @@ This git repo is used for the benchmark GrafGen, fastaBAPS, popPUNK and fineSTRU
 
 ## GrafGen V2 beta (HpGP26695 as reference)
 ```
-https://github.com/wheelerb/GrafGen/tree/v2.0_beta
+git clone -b v2.0_beta https://github.com/wheelerb/GrafGen
 ```
 
 ## fastBAPS
 ```
-https://github.com/gtonkinhill/fastbaps
+git clone https://github.com/gtonkinhill/fastbaps
 ```
 
 ## PopPUNK
 ```
-https://github.com/bacpop/PopPUNK
+git clone https://github.com/bacpop/PopPUNK
 
 # Download PopPUNK database
 
@@ -24,6 +24,6 @@ https://www.bacpop.org/poppunk/
 
 ## fineSTRUCTURE
 ```
-https://github.com/danjlawson/finestructure4
+git clone https://github.com/danjlawson/finestructure4
 ```
 
