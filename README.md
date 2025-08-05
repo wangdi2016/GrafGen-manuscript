@@ -84,6 +84,6 @@ PopPUNK gives more than 980 clusters either using the software provided H. pylor
 |fastBAPS_c13|0.711|0.722|
 |FS          |0.647|0.617|
 |FSsub       |0.625|0.643|
-|DAP6        |0.523|0.607|
+|DAPC6       |0.523|0.607|
 |PopPUNK     |0.001|0.267|
 
