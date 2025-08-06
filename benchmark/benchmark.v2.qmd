@@ -1,6 +1,7 @@
 ---
 title: GrafGen Benchmark
-date: 08/02/2005
+date: "`r Sys.Date()`"
+#date: 08/02/2005
 date-format: long
 
 format:
@@ -54,7 +55,7 @@ poppunk    <- read.csv("data/poppunk_clusters.csv", header = TRUE)
 #finestructure <- read.csv("finestructure_clusters.csv", header = TRUE)
 FS <- read.csv("data/FS_clusters.csv", header = TRUE)
 FSsub <- read.csv("data/FSsub_clusters.csv", header = TRUE)
-DAP6 <- read.csv("data/DAP6_clusters.csv", header = TRUE)
+DAPC6 <- read.csv("data/DAPC6_clusters.csv", header = TRUE)
 ```
 
 # Merge by Sample
@@ -62,14 +63,14 @@ DAP6 <- read.csv("data/DAP6_clusters.csv", header = TRUE)
 ```{r}
 merged <- Reduce(function(x, y) merge(x, y, by = "Sample"),
                  list(grafgen, fastbaps5, fastbaps7,
-                      fastbaps8, fastbaps13, FS, FSsub, DAP6, poppunk))
+                      fastbaps8, fastbaps13, FS, FSsub, DAPC6, poppunk))
 
 # Rename cluster columns for clarity
 #colnames(merged) <- c("sample_id", "GrafGen", "fastBAPS", "PopPUNK",
 #                      "fineSTRUCTURE")
 colnames(merged) <- c("sample_id", "GrafGen", "fastBAPS_c5",
                       "fastBAPS_c7", "fastBAPS_c8", "fastBAPS_c13",
-                      "FS", "FSsub", "DAP6", "PopPUNK")
+                      "FS", "FSsub", "DAPC6", "PopPUNK")
 ```
 
 # Convert clusters to factors (important for ARI/NMI)
@@ -83,7 +84,7 @@ merged$fastBAPS_c13  <- as.factor(merged$fastBAPS_c13)
 merged$PopPUNK       <- as.factor(merged$PopPUNK)
 merged$FS <- as.factor(merged$FS)
 merged$FSsub <- as.factor(merged$FSsub)
-merged$DAP6 <- as.factor(merged$DAP6)
+merged$DAPC6 <- as.factor(merged$DAPC6)
 ```
 
 # Compute ARI and NMI scores (each method vs GrafGen)
@@ -96,7 +97,7 @@ ari_vals <- c(
   adjustedRandIndex(merged$GrafGen, merged$fastBAPS_c13),
   adjustedRandIndex(merged$GrafGen, merged$FS),
   adjustedRandIndex(merged$GrafGen, merged$FSsub),
-  adjustedRandIndex(merged$GrafGen, merged$DAP6),
+  adjustedRandIndex(merged$GrafGen, merged$DAPC6),
   adjustedRandIndex(merged$GrafGen, merged$PopPUNK)
 )
 
@@ -107,12 +108,12 @@ nmi_vals <- c(
   NMI(merged$GrafGen, merged$fastBAPS_c13),
   NMI(merged$GrafGen, merged$FS),
   NMI(merged$GrafGen, merged$FSsub),
-  NMI(merged$GrafGen, merged$DAP6),
+  NMI(merged$GrafGen, merged$DAPC6),
   NMI(merged$GrafGen, merged$PopPUNK)
 )
 
 methods <- c("fastBAPS_c5", "fastBAPS_c7", "fastBAPS_c8",
-             "fastBAPS_c13", "FS", "FSsub", "DAP6", "PopPUNK")
+             "fastBAPS_c13", "FS", "FSsub", "DAPC6", "PopPUNK")
 ```
 
 # Prepare data frame for bar plot
@@ -161,7 +162,7 @@ df_sankey <- merged[, c("sample_id", "GrafGen",
                                      "fastBAPS_c13",
                                      "FS",
                                      "FSsub",
-                                     "DAP6",
+                                     "DAPC6",
                                      "PopPUNK")]
 head(df_sankey)
 write.csv(df_sankey, file="results/df_sankey.csv")
@@ -211,7 +212,7 @@ ggplot(df_sankey,
            axis5 = fastBAPS_c13,
            axis6 = FS,
            axis7 = FSsub,
-           axis8 = DAP6)) +
+           axis8 = DAPC6)) +
   geom_alluvium(aes(fill = GrafGen), width = 1/12) +
   geom_stratum(width = 1/12, fill = "gray90", color = "black") +
   geom_label(stat = "stratum", aes(label = after_stat(stratum)),
@@ -227,7 +228,7 @@ ggplot(df_sankey,
                               "fastBAPS_c13",
                               "FS",
                               "FSsub",
-                              "DAP6"),
+                              "DAPC6"),
                    expand = c(.05, .05)) +
   theme_minimal(base_size = 18) +
   theme(
@@ -254,7 +255,7 @@ ggplot(df_sankey,
            axis5 = fastBAPS_c13,
            axis6 = FS,
            axis7 = FSsub,
-           axis8 = DAP6,
+           axis8 = DAPC6,
            axis9 = PopPUNK)) +
   geom_alluvium(aes(fill = GrafGen), width = 1/12) +
   geom_stratum(width = 1/12, fill = "gray90", color = "black") +
@@ -271,7 +272,7 @@ ggplot(df_sankey,
                               "fastBAPS_c13",
                               "FS",
                               "FSsub",
-                              "DAP6",
+                              "DAPC6",
                               "PopPUNK"),
                    expand = c(.05, .05)) +
   theme_minimal(base_size = 18) +
@@ -287,7 +288,53 @@ ggplot(df_sankey,
   labs(title = "Sankey Plot: Cluster Membership Flow Across Methods",
        x = "Methods",
        y = "Number of Samples")
-#dev.off()
+
+# 8.3 Create Sankey plot showing flow across clusterings, no PopPUNK and DAPC6
+pdf(file="results/Sankey.pdf", height=16, width=30)
+p <- ggplot(df_sankey,
+       aes(axis1 = GrafGen,
+           axis2 = fastBAPS_c5,
+           axis3 = fastBAPS_c7,
+           axis4 = fastBAPS_c8,
+           axis5 = fastBAPS_c13,
+           axis6 = FS,
+           axis7 = FSsub)) +
+  geom_alluvium(aes(fill = GrafGen), width = 1/12) +
+  geom_stratum(width = 1/12, fill = "gray90", color = "black") +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum)),
+             size = 5, fontface = "bold") +
+# geom_text(data = flow_counts,
+#           aes(x = 1.5, y = Freq / 2 + cumsum(Freq) - Freq/2, label = Freq),
+#           inherit.aes = FALSE,
+#           size = 4) +
+  scale_x_discrete(limits = c("GrafGen",
+                              "fastBAPS_c5",
+                              "fastBAPS_c7",
+                              "fastBAPS_c8",
+                              "fastBAPS_c13",
+                              "FS",
+                              "FSsub"),
+                   expand = c(.05, .05)) +
+  theme_minimal(base_size = 20) +
+  theme(
+    axis.title = element_text(face = "bold", size = 20), # bold axis titles
+    axis.text = element_text(face = "bold", size = 20), # bold axis text (ticks)
+    plot.title = element_text(face = "bold", size = 28), # bold and bigger title
+    axis.text.x = element_text(angle = 45,
+                               vjust = 1, # moves text downward, closer to axis
+                               hjust = 1,
+                               margin = margin(t = 0) # remove top margin
+                               )
+    ) +
+  labs(title = "Sankey Plot: Cluster Membership Flow Across Methods",
+       x = "Methods",
+       y = "Number of Samples")
+print(p)
+
+dev.off()
+
+print(p)
+
 ```
 
 # Output ARI and NMI in a table and save to CSV
