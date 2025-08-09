@@ -290,6 +290,16 @@ ggplot(df_sankey,
        y = "Number of Samples")
 
 # 8.3 Create Sankey plot showing flow across clusterings, no PopPUNK and DAPC6
+mycolors <- c("#006400", # hpgpAfrica
+              "#bc8f8f", # hpgpAfrica-distant
+              "#00ffff", # hpgpAfromerica
+              "#ff0000", # hpgpAklvik86-like
+              "#0000cd", # hpgpAsia
+              "#ffd700", # hpgpEurasia
+              "#00ff00", # hpgpEuroamerica
+              "#1e90ff", # hpgpEurope
+              "#ff69b4") # hpgpMediterranea
+
 pdf(file="results/Sankey.pdf", height=16, width=30)
 p <- ggplot(df_sankey,
        aes(axis1 = GrafGen,
@@ -315,6 +325,7 @@ p <- ggplot(df_sankey,
                               "FS",
                               "FSsub"),
                    expand = c(.05, .05)) +
+  scale_fill_manual(values = mycolors) +
   theme_minimal(base_size = 20) +
   theme(
     axis.title = element_text(face = "bold", size = 20), # bold axis titles
