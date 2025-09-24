@@ -2,7 +2,7 @@
 
 hpylori.vcf.gz is copied from core.vcf.gz
 
-## run step1 for LD pruning
+## Step1 for LD pruning
 ```
 nohup ./step1.ld.sh > step1.ld.log
 ```
@@ -14,7 +14,7 @@ nohup ./step1.ld.sh > step1.ld.log
 plink2 --pfile hpylori.id --maf 0.01 --indep-pairwise 10 5 0.01 --out hpylori_ld
 ```
 
-## run step2 for LD pruning grid
+## Step2 for LD pruning grid
 ```
 nohup ./step2.ldgrid.sh > step2.ldgrid.log
 ```
