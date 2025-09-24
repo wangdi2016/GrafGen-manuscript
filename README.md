@@ -4,8 +4,6 @@ This git repo is used for the benchmark GrafGen, fastaBAPS, popPUNK and fineSTRU
 
 # 1. Benchmarking GrafGen, fastBAPS, popPUNK, and fineSTRUCURE
 
-This git repo is used for the benchmark GrafGen, fastaBAPS, popPUNK and fineSTRUCTURE in GrafGen manuscript.
-
 ## Step 1. Obtain software and installation
 
 #### GrafGen V2 beta (HpGP26695 as reference)
