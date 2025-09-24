@@ -1,8 +1,8 @@
-# LD pruning --maf 0.01 --indep-pairwise 10 5 0.01 
+# LD pruning
 
 hpylori.vcf.gz is copied from core.vcf.gz
 
-## Step1 for LD pruning
+## Step1 for LD pruning --maf 0.01 --indep-pairwise 10 5 0.01 
 ```
 nohup ./step1.ld.sh > step1.ld.log
 ```
