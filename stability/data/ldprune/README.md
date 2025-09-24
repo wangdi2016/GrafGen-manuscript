@@ -1,10 +1,17 @@
-LD pruning 
+# LD pruning --maf 0.01 --indep-pairwise 10 5 0.01 
 
 hpylori.vcf.gz is copied from core.vcf.gz
 
 ## run step1 for LD pruning
 ```
 nohup ./step1.ld.sh > step1.ld.log
+```
+
+### PLINK command
+
+```
+# LD prune r^2 < 0.01 (≈ r < 0.1)
+plink2 --pfile hpylori.id --maf 0.01 --indep-pairwise 10 5 0.01 --out hpylori_ld
 ```
 
 ## run step2 for LD pruning grid
