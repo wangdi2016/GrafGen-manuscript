@@ -1,4 +1,4 @@
-# GrafGen-benchmark
+# GrafGen-manuscript
 
 Benchmarking GrafGen, fastBAPS, popPUNK, and fineSTRUCURE
 
