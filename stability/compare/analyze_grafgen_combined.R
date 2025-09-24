@@ -82,7 +82,7 @@ tab_long <- as_tibble(tab) |>
 p_conf <- ggplot(tab_long, aes(x = PRUNED, y = FULL, fill = prop)) +
   geom_tile() +
   geom_text(aes(label = percent(prop, accuracy = 0.1)), size = 3) +
-  scale_fill_gradient(low = "white", high = "steelblue", labels = percent) +
+  scale_fill_gradient(low = "white", high = "pink", labels = percent) +
   labs(x = "PRUNED label", y = "FULL label",
        title = "Confusion heatmap (PRUNED vs FULL)",
        fill = "Within-FULL\nfraction") +
