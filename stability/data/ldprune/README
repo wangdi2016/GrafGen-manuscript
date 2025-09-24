@@ -1,5 +1,13 @@
 LD pruning 
 
+hpylori.vcf.gz is copied from core.vcf.gz
+
+## run step1 for LD pruning
+```
+nohup ./step1.ld.sh > step1.ld.log
 ```
 
+## run step2 for LD pruning grid
+```
+nohup ./step2.ldgrid.sh > step2.ldgrid.log
 ```
