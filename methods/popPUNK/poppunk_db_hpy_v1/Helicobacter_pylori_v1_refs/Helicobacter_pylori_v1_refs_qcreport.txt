@@ -1,0 +1,9 @@
+SAMN02709497	Above upper length threshold
+SAMN02709498	Above upper length threshold
+SAMN02709499	Above upper length threshold
+SAMN08275301	Above upper length threshold
+SAMN08275308	Above upper length threshold
+SAMN05408340	Above upper length threshold
+SAMN10419323	Above upper length threshold
+SAMN13427746	Above upper length threshold
+SAMN14080456	Above upper length threshold

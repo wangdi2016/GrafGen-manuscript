@@ -1,9 +1,0 @@
-grid    r2    window_kb  step_var  kept    pct_postmaf  pct_total  file
-r2      0.01  10         5         67359   32.7         13.5       ldgrid/r2_0.01.prune.in
-r2      0.02  10         5         92731   45.0         18.6       ldgrid/r2_0.02.prune.in
-r2      0.05  10         5         126830  61.6         25.4       ldgrid/r2_0.05.prune.in
-r2      0.10  10         5         150333  73.0         30.1       ldgrid/r2_0.10.prune.in
-window  0.01  5          5         113850  55.3         22.8       ldgrid/win_5.prune.in
-window  0.01  10         5         67359   32.7         13.5       ldgrid/win_10.prune.in
-window  0.01  25         5         40002   19.4         8.0        ldgrid/win_25.prune.in
-window  0.01  50         5         28157   13.7         5.6        ldgrid/win_50.prune.in

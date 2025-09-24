@@ -1,8 +1,0 @@
-metric	value
-Samples	1011
-Agreement	0.9951
-Cohen_kappa	0.9939
-MAE_F	2.0198
-MAE_E	3.1229
-MAE_A	1.508
-MAE_overall	2.2169
