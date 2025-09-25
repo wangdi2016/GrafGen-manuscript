@@ -8,11 +8,11 @@ The scripts folder has the code to run the benchmarking.
 ```
 .
 ├── data
-│   ├── dap6
+│   ├── DAP6
 │   ├── fastBAPS
-│   ├── fs
-│   ├── grafgen
-│   └── poppunk
+│   ├── fineSTRUCTURE
+│   ├── GrafGen
+│   └── popPUNK
 ├── methods
 │   ├── fastBASP
 │   │   └── data
