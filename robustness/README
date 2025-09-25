@@ -1,0 +1,5 @@
+# Robustness evaluation
+
+We use full set of SNPs and LD pruned (PLINK2 --indep-pairwise 10 5 0.01; r^2<0.01≈r<0.1) to check the robustness of GrafGen. Repeating the analysis on an LD-pruned panel yielded near-identical results across n = 1011 genomes: 99.51% top-1 agreement with the full panel (Cohen’s κ = 0.9939), with mean absolute error (MAE) changes of 2.02, 3.12, and 1.51 percentage points (pp) for F, E, and A, respectively (overall MAE = 2.22 pp). Only samples in hpgpEurope and hpgpMediterranea interexchange, 0.5% from hpgpMediterranea to hpgpEurope while 1.4% from hpgpEurope to hpgpMediterranea.  The rest assignments (hpgpEurasia, hpgpAsia, hpgpAklavik86-like, hpgpAfroamerica, hpgpAfrica-distant, and hpgpAfrica) are the same. These findings indicate GrafGen’s ancestry estimates are robust to LD/recombination and SNP subsampling.
+
+<img width="1308" height="633" alt="Screenshot 2025-09-24 at 6 46 12 PM" src="https://github.com/user-attachments/assets/71d5818c-5102-4b01-bda4-00390886722a" />
