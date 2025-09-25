@@ -1,7 +1,0 @@
-HpGP-ALG-001	/Users/wangdi/work2/GrafGen-revision/benchmark/data/1011set-HpGP26695-snippy-500x/core-fa/HpGP-ALG-001.fa
-HpGP-ALG-002	/Users/wangdi/work2/GrafGen-revision/benchmark/data/1011set-HpGP26695-snippy-500x/core-fa/HpGP-ALG-002.fa
-HpGP-ALG-003	/Users/wangdi/work2/GrafGen-revision/benchmark/data/1011set-HpGP26695-snippy-500x/core-fa/HpGP-ALG-003.fa
-HpGP-ALG-004	/Users/wangdi/work2/GrafGen-revision/benchmark/data/1011set-HpGP26695-snippy-500x/core-fa/HpGP-ALG-004.fa
-HpGP-ALG-005	/Users/wangdi/work2/GrafGen-revision/benchmark/data/1011set-HpGP26695-snippy-500x/core-fa/HpGP-ALG-005.fa
-
-/Users/wangdi/work2/GrafGen-revision/benchmark/data/fna
