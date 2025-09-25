@@ -32,7 +32,7 @@ git clone https://github.com/danjlawson/finestructure4
 ## Step 2. Benchmark
 
 #### Step 2.1 Description
-To check the performance of GrafGen, we benchmarked it with fastBAPS [x], PopPUNK[x] and fineSTRUCTURE[x]. Since we had knew the fact that fineSTRUCTURE is CPU intensive for large dataset, like HpGP[x], we did not re-run it again and just used the previous result with the same dataset to compare the agreement with GrafGen.  Also, the reason we used fastBAPS instead of BAPS was that BAPS was written in MATLAB code and we had an issue to compile it.  fastBAPS was a successor of BAPS with improved speed and features.
+To check the performance of GrafGen, we benchmarked it with fastBAPS, PopPUNK and fineSTRUCTURE. Since we had knew the fact that fineSTRUCTURE is CPU intensive for large dataset, like HpGP, we did not re-run it again and just used the previous result with the same dataset to compare the agreement with GrafGen.  Also, the reason we used fastBAPS instead of BAPS was that BAPS was written in MATLAB code and we had an issue to compile it. fastBAPS was a successor of BAPS with improved speed and features.
 
 To compare the performance of these methods, we used Adjusted Rand Index (ARI, ranging from -1 to 1) and Normalized Mutual Information (NMI, ranging from 0 to 1) to evaluates the similarity between any two clustering assignments. Both have 1 for perfect match and 0 for random labeling. 
 
