@@ -1,5 +1,7 @@
 # fineSTRUCTURE
 
+Run fineSTRUCTURE
+
 ```
 #!/usr/bin/env bash
 #SBATCH -A naiss2023-22-479
